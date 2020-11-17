@@ -36,7 +36,8 @@ const PostScreen = ({ match }) => {
           </ListGroup>
         </Col>
         <Col>
-          <Link className='btn btn-light my-3' to='/'>
+          <p className='mt-3'>{post.createdAt}</p>
+          <Link className='btn btn-light' to='/'>
             Go Back
           </Link>
         </Col>

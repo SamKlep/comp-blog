@@ -4,7 +4,9 @@ import { Nav } from 'react-bootstrap'
 const Footer = () => {
   return (
     <div>
-      <Nav className='bg-primary p-5 justify-content-center' activeKey='/'>
+      <Nav
+        className='bg-primary p-5 fixed-bottom justify-content-center'
+        activeKey='/'>
         <Nav.Item>
           <Nav.Link href='/'>Comp-Blog</Nav.Link>
         </Nav.Item>
