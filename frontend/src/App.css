@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman&family=Poppins&display=swap');
+
 body {
   height: 100%;
 }
 
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo {
+  font-family: 'Goldman', cursive;
+}
 /* .cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

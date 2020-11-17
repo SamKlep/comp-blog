@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <>
       <Navbar bg='secondary' expand='lg'>
-        <Navbar.Brand className='text-white' href='/'>
+        <Navbar.Brand className='text-white logo' href='/'>
           m/M
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
