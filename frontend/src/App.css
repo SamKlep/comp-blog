@@ -2,10 +2,6 @@ body {
   height: 100%;
 }
 
-.card {
-  perspective: 1000px;
-}
-
 /* .cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

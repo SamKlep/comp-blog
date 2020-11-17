@@ -1,14 +1,14 @@
 import React from 'react'
 import Truncate from 'react-truncate'
 import Moment from 'react-moment'
-import { Card, Container } from 'react-bootstrap'
+import { Card, Container, Button } from 'react-bootstrap'
 
 import { Link } from 'react-router-dom'
 
 const PostListItem = ({ post }) => {
   return (
-    <Container className='justify-content-md-center'>
-      <Card className='align-items-center mb-5'>
+    <Container className='justify-content-md-center mb-5'>
+      <Card className='mx-auto' style={{ width: '60%' }}>
         <Card.Body>
           <Link to={`/posts/${post._id}`}>
             <Card.Title className='bg-secondary' as='div'>
@@ -17,14 +17,21 @@ const PostListItem = ({ post }) => {
               </strong>
             </Card.Title>
           </Link>
-          <p>
-            <Truncate lines={3}>{post.body}</Truncate>
-          </p>
-          <Card.Footer className='bg-light text-dark'>
+          <Card.Subtitle className='mb-2 text-muted'>
             <Moment element='span' format='YYYY/MM/DD HH:mm'>
               {post.createdAt}
             </Moment>
-          </Card.Footer>
+          </Card.Subtitle>
+          <Card.Text>
+            <p>
+              <Truncate lines={3}>{post.body}</Truncate>
+            </p>
+          </Card.Text>
+          <Link to={`/posts/${post._id}`}>
+            <Card.Link href='#'>
+              <Button>Learn More</Button>
+            </Card.Link>
+          </Link>
         </Card.Body>
       </Card>
     </Container>

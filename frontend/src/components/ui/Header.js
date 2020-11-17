@@ -5,7 +5,7 @@ const Header = () => {
     <>
       <Navbar bg='secondary' expand='lg'>
         <Navbar.Brand className='text-white' href='/'>
-          Comp-Blog
+          m/M
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>

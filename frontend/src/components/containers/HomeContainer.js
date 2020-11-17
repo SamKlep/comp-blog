@@ -31,8 +31,7 @@ const HomeContainer = () => {
     <div className=' text-center'>
       <Jumbotron fluid>
         <Container>
-          <h1 className='text-warning'>Posts</h1>
-          <p className='lead'>Heres what I've learned so far.</p>
+          <h1 className='text-warning'>little mind/BIG MIND</h1>
         </Container>
       </Jumbotron>
 
