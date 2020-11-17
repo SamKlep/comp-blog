@@ -3,6 +3,7 @@ const express = require('express')
 const dotenv = require('dotenv')
 const morgan = require('morgan')
 const colors = require('colors')
+const cors = require('cors')
 
 const connectDB = require('./config/db')
 
@@ -16,6 +17,9 @@ connectDB()
 const posts = require('./routes/postRoutes')
 
 const app = express()
+var bodyParser = require('body-parser')
+
+app.use(bodyParser.json())
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
@@ -34,6 +38,9 @@ app.use(express.json())
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'))
 }
+
+// Enable CORS
+app.use(cors())
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')))

@@ -21,7 +21,6 @@ const PostSchema = mongoose.Schema(
     },
     slug: {
       type: String,
-
       unique: true,
     },
   },

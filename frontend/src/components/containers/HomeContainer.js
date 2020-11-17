@@ -3,7 +3,7 @@ import axios from 'axios'
 import PostListItem from '../posts/PostListItem'
 
 import '../../App.css'
-import { Row, Col, Jumbotron } from 'react-bootstrap'
+import { Row, Col, Jumbotron, Container } from 'react-bootstrap'
 
 const HomeContainer = () => {
   const [data, setData] = useState([])
@@ -28,9 +28,12 @@ const HomeContainer = () => {
   }
 
   return (
-    <div className='container text-center'>
+    <div className=' text-center'>
       <Jumbotron fluid>
-        <h1 className='text-warning'>Posts</h1>
+        <Container>
+          <h1 className='text-warning'>Posts</h1>
+          <p className='lead'>Heres what I've learned so far.</p>
+        </Container>
       </Jumbotron>
 
       <Row>

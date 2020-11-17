@@ -13,8 +13,8 @@ const Header = () => {
             <Nav.Link className='text-white' href='/'>
               Posts
             </Nav.Link>
-            <Nav.Link className='text-white' href='links'>
-              Links
+            <Nav.Link className='text-white' href='/create'>
+              Create
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
