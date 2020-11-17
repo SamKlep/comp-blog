@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { Row, Col, ListGroup } from 'react-bootstrap'
+import { Row, Col, ListGroup, Container } from 'react-bootstrap'
 
 const PostScreen = ({ match }) => {
   const [post, setPost] = useState({})
@@ -18,9 +18,10 @@ const PostScreen = ({ match }) => {
     // eslint-disable-next-line
   }, [match])
   return (
-    <>
-      <Row className='justify-content-md-center  mb-5'>
-        <Col md={6}>
+    <Container>
+      <Row className='justify-content-md-center mt-5  mb-5'>
+        <Col lg={2}></Col>
+        <Col lg={6}>
           <ListGroup variant='flush'>
             <ListGroup.Item>
               <strong>
@@ -34,12 +35,13 @@ const PostScreen = ({ match }) => {
             </ListGroup.Item>
           </ListGroup>
         </Col>
-        <Col md={3}>{post.createdAt}</Col>
+        <Col>
+          <Link className='btn btn-light my-3' to='/'>
+            Go Back
+          </Link>
+        </Col>
       </Row>
-      <Link className='btn btn-light my-3' to='/'>
-        Go Back
-      </Link>
-    </>
+    </Container>
   )
 }
 

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const PostListItem = ({ post }) => {
   return (
     <Container className='justify-content-md-center'>
-      <Card className=' mb-5'>
+      <Card className='align-items-center mb-5'>
         <Link to={`/posts/${post._id}`}></Link>
         <Card.Body>
           <Link to={`/posts/${post._id}`}>
