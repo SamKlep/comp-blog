@@ -2,12 +2,16 @@ const express = require('express')
 
 const router = express.Router()
 
-const { getPosts, getPostById } = require('../controllers/postController')
+const {
+  getPosts,
+  getPostById,
+  createPost,
+} = require('../controllers/postController')
 
 // @ desc       Fetch all posts
 // @route       GET /api/posts
 // @access      Public
-router.route('/').get(getPosts)
+router.route('/').get(getPosts).post(createPost)
 
 // @ desc       Fetch single post
 // @route       GET /api/posts/:id

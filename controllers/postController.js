@@ -5,7 +5,7 @@ const Post = require('../models/Post')
 // @route       GET /api/posts
 // @access      Public
 const getPosts = asyncHandler(async (req, res) => {
-  const posts = await Post.find({})
+  const posts = await Post.find().sort({ createdAt: -1 })
 
   res.json(posts)
 })
@@ -24,4 +24,13 @@ const getPostById = asyncHandler(async (req, res) => {
   }
 })
 
-module.exports = { getPosts, getPostById }
+// @desc        Create new fungus
+// @route       POST /api/v1/fungus
+// @access      Private
+const createPost = asyncHandler(async (req, res) => {
+  const post = await Post.create(req.body)
+
+  res.status(201).json({ success: true, data: post })
+})
+
+module.exports = { getPosts, getPostById, createPost }
