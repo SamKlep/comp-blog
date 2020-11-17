@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { Row, Col, ListGroup, Container } from 'react-bootstrap'
+import Moment from 'react-moment'
 
 const PostScreen = ({ match }) => {
   const [post, setPost] = useState({})
@@ -36,8 +37,8 @@ const PostScreen = ({ match }) => {
           </ListGroup>
         </Col>
         <Col>
-          <p className='mt-3'>{post.createdAt}</p>
-          <Link className='btn btn-light' to='/'>
+          <Moment format='YYYY/MM/DD HH:mm'>{post.createdAt}</Moment>
+          <Link className='btn btn-light m-3' to='/'>
             Go Back
           </Link>
         </Col>
