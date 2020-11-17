@@ -2,7 +2,6 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Form, Button } from 'react-bootstrap'
 import Axios from 'axios'
-import { Redirect } from 'react-router-dom'
 
 export default function App() {
   const { register, handleSubmit } = useForm()
