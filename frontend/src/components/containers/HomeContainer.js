@@ -31,7 +31,7 @@ const HomeContainer = () => {
     <div className=' text-center'>
       <Jumbotron fluid>
         <Container>
-          <h1 className='text-warning logo'>little mind/BIG MIND</h1>
+          <h1 className='text-warning logo'>lil mind/BIG MIND</h1>
         </Container>
       </Jumbotron>
 
