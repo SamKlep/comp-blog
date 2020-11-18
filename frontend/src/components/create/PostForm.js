@@ -1,42 +1,49 @@
-import React from 'react'
-import { useForm } from 'react-hook-form'
+import React, { useState } from 'react'
+import axios from 'axios'
 import { Form, Button } from 'react-bootstrap'
-import Axios from 'axios'
 
-export default function App() {
-  const { register, handleSubmit } = useForm()
-  const onSubmit = (data) =>
-    Axios.post('/api/v1/posts', { data })
-      .then((res) => {
-        console.log(res.data)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+function PostForm() {
+  const [title, setTitle] = useState('')
+  const [body, setBody] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const data = {
+      title: title,
+      body: body,
+    }
+    axios
+      .post('api/v1/posts', data)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err))
+  }
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
-      <Form.Group controlId='exampleForm.ControlInput1'>
-        <Form.Label>Title</Form.Label>
-        <Form.Control
-          name='title'
-          ref={register({ required: true, maxLength: 200 })}
-          type='textarea'
-          placeholder='Example Heading'
-        />
-      </Form.Group>
+    <Form onSubmit={handleSubmit}>
+      <Form.Control
+        className='m-3'
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder='Title'
+        type='text'
+        name='title'
+        required
+      />
+      <Form.Control
+        className='m-3'
+        value={body}
+        onChange={(e) => setBody(e.target.value)}
+        placeholder='Some text...'
+        as='textarea'
+        rows={6}
+        name='body'
+        required
+      />
 
-      <Form.Group controlId='exampleForm.ControlTextarea1'>
-        <Form.Label>Description</Form.Label>
-        <Form.Control
-          as='textarea'
-          name='body'
-          placeholder='Example description of a post...'
-          rows={10}
-          ref={register({ required: true, maxLength: 200 })}
-        />
-      </Form.Group>
-      <Button type='submit'>Sumbit</Button>
+      <Button variant='warning' className='text-dark m-2' type='submit'>
+        Submit
+      </Button>
     </Form>
   )
 }
+export default PostForm

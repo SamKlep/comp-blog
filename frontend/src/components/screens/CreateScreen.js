@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row, Col, Jumbotron } from 'react-bootstrap'
-import Form from '../create/Form'
+import PostForm from '../create/PostForm'
 
 const CreateScreen = () => {
   return (
@@ -13,7 +13,7 @@ const CreateScreen = () => {
       <Container className='mb-5'>
         <Row className='justify-content-md-center'>
           <Col lg={6}>
-            <Form />
+            <PostForm />
           </Col>
         </Row>
       </Container>

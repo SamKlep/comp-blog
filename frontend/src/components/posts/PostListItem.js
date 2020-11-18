@@ -29,7 +29,7 @@ const PostListItem = ({ post }) => {
           </Card.Text>
           <Link to={`/posts/${post._id}`}>
             <Card.Link href='#'>
-              <Button>Learn More</Button>
+              <Button variant='secondary'>Learn More</Button>
             </Card.Link>
           </Link>
         </Card.Body>
