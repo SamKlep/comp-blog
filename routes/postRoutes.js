@@ -6,16 +6,12 @@ const {
   getPosts,
   getPostById,
   createPost,
+  updatePost,
+  deletePost,
 } = require('../controllers/postController')
 
-// @ desc       Fetch all posts
-// @route       GET /api/posts
-// @access      Public
 router.route('/').get(getPosts).post(createPost)
 
-// @ desc       Fetch single post
-// @route       GET /api/posts/:id
-// @access      Public
-router.route('/:id').get(getPostById)
+router.route('/:id').get(getPostById).put(updatePost).delete(deletePost)
 
 module.exports = router

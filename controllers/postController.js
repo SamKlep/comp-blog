@@ -33,4 +33,33 @@ const createPost = asyncHandler(async (req, res) => {
   res.status(201).json({ success: true, data: post })
 })
 
-module.exports = { getPosts, getPostById, createPost }
+// @desc        Update post
+// @route       PUT /api/v1/posts/:id
+// @access      Private
+const updatePost = asyncHandler(async (req, res, next) => {
+  const post = await Post.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true,
+  })
+
+  if (!post) {
+    return next(new Error(`Post not found with id of ${req.params.id}`, 404))
+  }
+})
+
+// @desc        Delete post
+// @route       DELETE /api/v1/post/:id
+// @access      Private
+const deletePost = asyncHandler(async (req, res, next) => {
+  const post = await Post.findByIdAndDelete(req.params.id)
+
+  if (!post) {
+    return next(new Error(`Post not found with id of ${req.params.id}`, 404))
+  }
+
+  post.remove()
+
+  res.status(200).json({ success: true, data: {} })
+})
+
+module.exports = { getPosts, getPostById, createPost, updatePost, deletePost }
